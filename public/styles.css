@@ -142,6 +142,7 @@ html {
     opacity: 0.8;
     box-shadow: none !important;
     border-color: white !important;
+    color: white;
 }
 
 .about:focus,
@@ -149,6 +150,7 @@ html {
     background-color: #ff414d !important;
     box-shadow: none !important;
     border-color: white !important;
+    color: white;
 }
 
 img {
