@@ -24,10 +24,10 @@ app.post('/pay.html', function (req, res) {
     var amount = req.body.amount;
     data.buyer_name = req.body.name;
     var name = req.body.name;
-    var name2 = name.replace(" ", "+");
+    var name2 = name.replace(/ /g, "+");
     var amount2 = amount.replace(" ", "");
     data.email = req.body.email;
-    data.phone = '9999999999';
+    data.phone = "9876543210";
     data.allow_repeated_payments = false;
     data.send_email = true;
     data.redirect_url = "https://evening-coast-95168.herokuapp.com/detail.html?name=" + name2 + "&amount=" + amount2;
