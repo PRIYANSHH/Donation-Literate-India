@@ -30,7 +30,7 @@ app.post('/pay.html', function (req, res) {
     data.phone = '9999999999';
     data.allow_repeated_payments = false;
     data.send_email = true;
-    data.redirect_url = "http://localhost:3000/detail.html?name=" + name2 + "&amount=" + amount2;
+    data.redirect_url = "https://evening-coast-95168.herokuapp.com/detail.html?name=" + name2 + "&amount=" + amount2;
     Insta.createPayment(data, function (error, response) {
         if (error) {
             console.log(error);
