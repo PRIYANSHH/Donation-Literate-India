@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="applyit">
                                     <input type="email" class="form-control" id="newemail" placeholder="Email" required
-                                        autocomplete="on" name="email" value=""><span></span>
+                                        autocomplete="off" name="email" value=""><span></span>
                                 </div>
                                 <div class="applyit">
                                     <input type="tel" class="form-control" id="alternateno" placeholder="Mobile Number"
@@ -56,7 +56,8 @@
                                 </div>
                                 <div class="applyit">
                                     <input type="number" class="form-control" id="alternateno" placeholder="₹ Amount"
-                                        autocomplete="off" required name="amount" value="" min="10" /><span></span>
+                                        autocomplete="off" required name="amount" value="" min="10" max="10000"
+                                        minlength="5" /><span></span>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-lg btn-block sub">Continue</button>
