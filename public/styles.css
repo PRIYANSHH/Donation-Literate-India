@@ -89,6 +89,13 @@ html {
     width: 300px;
 }
 
+.pop {
+    width: 25%;
+    text-align: center;
+    margin: auto;
+    font-size: 16px;
+}
+
 .btnn {
     font-size: 30px;
     background-color: #ff4b5c;
@@ -227,6 +234,11 @@ img {
         font-size: 15px;
         overflow-x: hidden;
     }
+
+    .pop {
+        width: 40%;
+        font-size: 12px;
+    }
 }
 
 @media(max-width: 550px) {
@@ -343,36 +355,36 @@ img {
 
 @-webkit-keyframes fadeInUps {
     from {
-        opacity: 0;
+        opacity: 1;
         -webkit-transform: translate3d(0, 0, 0);
     }
 
     to {
-        -webkit-transform: translate3d(0, -40px, 0);
+        -webkit-transform: translate3d(0, -80px, 0);
         opacity: 1;
     }
 }
 
 @-o-keyframes fadeInUps {
     from {
-        opacity: 0;
+        opacity: 1;
         -o-transform: translate3d(0, 0, 0);
     }
 
     to {
-        -o-transform: translate3d(0, -40px, 0);
+        -o-transform: translate3d(0, -80px, 0);
         opacity: 1;
     }
 }
 
 @-moz-keyframes fadeInUps {
     from {
-        opacity: 0;
+        opacity: 1;
         -moz-transform: translate3d(0, 0, 0);
     }
 
     to {
-        -moz-transform: translate3d(0, -40px, 0);
+        -moz-transform: translate3d(0, -80px, 0);
         opacity: 1;
     }
 }
@@ -384,7 +396,7 @@ img {
     }
 
     to {
-        transform: translate3d(0, -40px, 0);
+        transform: translate3d(0, -80px, 0);
         opacity: 1;
     }
 }
@@ -565,7 +577,7 @@ img {
 .card {
     margin: auto;
     float: none;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 10px;
     width: 400px;
     border-radius: 10px;
@@ -719,6 +731,11 @@ input[type=number]::-webkit-outer-spin-button {
 @media(max-width: 450px) {
     .card {
         width: 350px;
+    }
+
+    .pop {
+        width: 70%;
+        font-size: 12px;
     }
 }
 

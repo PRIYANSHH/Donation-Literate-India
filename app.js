@@ -12,8 +12,13 @@ app.set("view engine", "ejs");
 app.get("/", function (req, res) {
     res.render("index");
 });
+var term = 0;
 app.get('/pay.html', function (req, res) {
-    res.render("pay");
+    res.render('pay', {
+        term: 0,
+        message: 0
+
+    });
 });
 app.post('/pay.html', function (req, res) {
     Insta.setKeys(keys.key1, keys.key2);
@@ -27,17 +32,30 @@ app.post('/pay.html', function (req, res) {
     var name2 = name.replace(/ /g, "+");
     var amount2 = amount.replace(" ", "");
     data.email = req.body.email;
-    data.phone = "9876543210";
+    data.phone = req.body.phone;
     data.allow_repeated_payments = false;
     data.send_email = true;
+    data.send_sms = true;
     data.redirect_url = "https://evening-coast-95168.herokuapp.com/detail.html?name=" + name2 + "&amount=" + amount2;
     Insta.createPayment(data, function (error, response) {
         if (error) {
             console.log(error);
         } else {
             const responseData = JSON.parse(response);
-            const redirectURL = responseData.payment_request.longurl;
-            res.redirect(redirectURL);
+            console.log(responseData);
+            if (responseData.success == true) {
+                const redirectURL = responseData.payment_request.longurl;
+                res.redirect(redirectURL);
+            } else {
+                term = 1;
+                console.log(responseData);
+                console.log(responseData.message);
+                res.render('pay', {
+                    term: term,
+                    message: responseData.message
+                });
+                term = 0;
+            }
         }
     });
 });

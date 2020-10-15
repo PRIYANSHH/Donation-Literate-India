@@ -33,40 +33,51 @@
                 <a href="/"> <button type="submit" class="btn btn-outline-dark home shine">Home</button></a>
             </div>
         </nav>
+        <%  if(term === 1) { %>
+        <div class="alert alert-warning pop in-up" role="alert">
+            <p><strong><%= message.email %></strong></p>
+            <p><strong><%= message.phone %></strong></p>
+        </div>
+        <% } %>
         <div class="row">
-            <div class="col in-down">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Donation</h5>
-                        <p class="today">"It is today we must create the world of the future." ~ Eleanor Roosevelt</p>
-                        <form action="/pay.html" method="POST">
-                            <div class="form-group wrapper">
-                                <div class="applyit">
-                                    <input type="text" class="form-control" id="newname" placeholder="Your Name"
-                                        required autocomplete="off" name="name" value=""><span></span>
+            <%  if(term === 1) { %>
+            <div class="col in-ups">
+                <% } else { %>
+                <div class="col">
+                    <% } %>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Donation</h5>
+                            <p class="today">"It is today we must create the world of the future." ~ Eleanor Roosevelt
+                            </p>
+                            <form action="/pay.html" method="POST">
+                                <div class="form-group wrapper">
+                                    <div class="applyit">
+                                        <input type="text" class="form-control" id="newname" placeholder="Your Name"
+                                            required autocomplete="off" name="name" value=""><span></span>
+                                    </div>
+                                    <div class="applyit">
+                                        <input type="email" class="form-control" id="newemail" placeholder="Email"
+                                            required autocomplete="off" name="email" value=""><span></span>
+                                    </div>
+                                    <div class="applyit">
+                                        <input type="tel" class="form-control" id="alternateno"
+                                            placeholder="Mobile Number" autocomplete="off" pattern="^[0-9]{10,10}$"
+                                            required name="phone" value="" /><span></span>
+                                    </div>
+                                    <div class="applyit">
+                                        <input type="number" class="form-control" id="alternateno"
+                                            placeholder="₹ Amount" autocomplete="off" required name="amount" value=""
+                                            min="10" max="10000" minlength="5" /><span></span>
+                                    </div>
                                 </div>
-                                <div class="applyit">
-                                    <input type="email" class="form-control" id="newemail" placeholder="Email" required
-                                        autocomplete="off" name="email" value=""><span></span>
-                                </div>
-                                <div class="applyit">
-                                    <input type="tel" class="form-control" id="alternateno" placeholder="Mobile Number"
-                                        autocomplete="off" pattern="^[0-9]{10,10}$" required name="phone"
-                                        value="" /><span></span>
-                                </div>
-                                <div class="applyit">
-                                    <input type="number" class="form-control" id="alternateno" placeholder="₹ Amount"
-                                        autocomplete="off" required name="amount" value="" min="10" max="10000"
-                                        minlength="5" /><span></span>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-lg btn-block sub">Continue</button>
-                        </form>
+                                <button type="submit" class="btn btn-lg btn-block sub">Continue</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 <script>
     document.onreadystatechange = function () {
